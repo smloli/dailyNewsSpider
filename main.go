@@ -103,6 +103,7 @@ func readConfig() string {
         fmt.Println(err)
         return ""
     }
+    defer f.Close()
     fi, _ := f.Stat()
     data := make([]byte, fi.Size())
     f.Read(data)
