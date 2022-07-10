@@ -15,10 +15,6 @@
 ![3.png](https://dd-static.jd.com/ddimg/jfs/t1/207196/17/24433/32879/62c707b7Efc5a1044/efec18a41659af34.png)
 * 请先运行一次软件，然后会生成一个config.json的文件，然后在文件中填入必要的参数
 
-### Github
-***
-* [https://github.com/smloli/todayNewsSpider](https://github.com/smloli/todayNewsSpider)
-
 ### 预览
 ***
-![4.jpg](https://dd-static.jd.com/ddimg/jfs/t1/45540/35/19676/354802/62c70880Ef3425012/97d9979c5cf4af82.jpg)
+![4.jpg](https://dd-static.jd.com/ddimg/jfs/t1/119235/12/25989/426541/62cac375E856ca475/412fee591e07bd2f.jpg)

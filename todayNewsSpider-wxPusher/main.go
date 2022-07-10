@@ -26,9 +26,31 @@ type Config struct {
 	Data []map[string]interface{}
 }
 
+type Image struct {
+	ImageContent struct {
+		Image struct {
+			Url string
+		}
+	}
+}
+
+type BingWallpaper struct {
+	MediaContents []Image
+}
+
+// 获取Bing当日壁纸
+func getBingWallpaper() string {
+	var bing BingWallpaper
+	url := "https://cn.bing.com/hp/api/model"
+	resp := get(url, nil)
+	json.Unmarshal(*resp, &bing)
+	return bing.MediaContents[0].ImageContent.Image.Url
+}
+
 func get(url string, headers *map[string]string) *[]byte {
 	client := &http.Client{}
 	req, _ := http.NewRequest("GET", url, nil)
+	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36")
 	if headers != nil {
 		for k, v := range *headers {
@@ -66,11 +88,11 @@ func parse() {
 	var con string
 	for i, v := range root {
 		if i == 0 {
-			con += "**" + htmlquery.InnerText(v) + "**\n\n"
+			con += "![](" + getBingWallpaper() + ")\n\n**<center>" + htmlquery.InnerText(v) + "</center>**\n\n"
 			continue
 		}
 		if i == len(root)-1 {
-			con += "\n##### " + htmlquery.InnerText(v)
+			con += "\n> " + htmlquery.InnerText(v)
 			break
 		}
 		con += strings.Replace(htmlquery.InnerText(v), "、", ". ", 1) + "\n"
