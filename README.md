@@ -1,4 +1,4 @@
-# 每日早报爬虫并推送到微信
+# 每日早报爬取并推送到微信
 
 ### 使用教程
 ***
@@ -19,4 +19,4 @@
 
 ### 预览
 ***
-![4.jpg](https://dd-static.jd.com/ddimg/jfs/t1/45540/35/19676/354802/62c70880Ef3425012/97d9979c5cf4af82.jpg)
+![4.jpg](https://dd-static.jd.com/ddimg/jfs/t1/119235/12/25989/426541/62cac375E856ca475/412fee591e07bd2f.jpg)
